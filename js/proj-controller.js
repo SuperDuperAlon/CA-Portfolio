@@ -7,12 +7,11 @@ function onInit() {
 function renderProjects() {
   var projects = getProjects();
   var elPortfolioCaption = document.querySelector(".row.portfolio-cards");
-  var elModalBody = document.querySelector(".modal-section");
 
   var captionHTML = projects
     .map(
       (project) => `<div class="col-md-4 col-sm-6 portfolio-item">
-      <a class="portfolio-link" data-toggle="modal" href="#portfolioModal${project.id}" onclick="openModal('${project.id}')">
+      <a class="portfolio-link" data-toggle="modal" href="#portfolioModal${project.id}" onclick="renderModal('${project.id}')">
         <div class="portfolio-hover">
           <div class="portfolio-hover-content">
             <i class="fa fa-plus fa-3x"></i>
@@ -30,28 +29,16 @@ function renderProjects() {
 
   console.log(projects.id);
   elPortfolioCaption.innerHTML = captionHTML;
-  // elModalBody.innerHTML = modalHTML
 }
 
-// function getId(ev) {
-//   console.log(ev);
-// }
+function renderModal(id) {
+  var project = getProjectById(id);
+  console.log(project);
 
-function openModal(id) {
-  var projects = getProjects();
-  console.log(projects);
-  var filtered = projects.filter((project) => id === project.id);
-  console.log(filtered[0].id);
-
-  renderModal(filtered)
-}
-
-function renderModal(obj){
-  console.log(obj);
-  var elModalSection = document.querySelector('.modal-section')
+  var elModalSection = document.querySelector(".modal-section");
   var modalHTML = `<div
   class="portfolio-modal modal fade"
-  id="portfolioModal${obj[0].id}"
+  id="portfolioModal${project.id}"
   tabindex="-1"
   role="dialog"
   aria-hidden="true"
@@ -68,7 +55,7 @@ function renderModal(obj){
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2>${obj[0].title}</h2>
+              <h2>${project.title}</h2>
               <p class="item-intro text-muted">
                 Lorem ipsum dolor sit amet consectetur.
               </p>
@@ -103,9 +90,6 @@ function renderModal(obj){
       </div>
     </div>
   </div>
-</div>`
-elModalSection.innerHTML = modalHTML
-
+</div>`;
+  elModalSection.innerHTML = modalHTML;
 }
-
-
