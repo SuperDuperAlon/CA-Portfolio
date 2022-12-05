@@ -18,10 +18,11 @@ function renderProjects() {
           </div>
         </div>
         <img class="img-portfolio portfolio-img" src="img/portfolio/${project.id}.jpg" alt="">
+
       </a>
       <div class="portfolio-caption">
       <h4>${project.name}</h4>
-        <p class="text-muted">${project.desc}</p>
+        <p class="text-muted">${project.title}</p>
       </div>
       </div>`
     )
@@ -33,9 +34,7 @@ function renderProjects() {
 function renderModal(id) {
   var project = getProjectById(id);
 
-
   var elModalSection = document.querySelector(".modal-section");
-
 
   var modalHTML = `<div
   class="portfolio-modal modal fade"
@@ -60,11 +59,15 @@ function renderModal(id) {
               <p class="item-intro text-muted">
                 ${project.title}
               </p>
+              <a href="https://superduperalon.github.io/${
+                project.url
+              }/" rel="noopener noreferrer" target="_blank">
               <img
                 class="img-fluid d-block mx-auto"
                 src="img/portfolio/${project.id}.jpg"
-                alt=""
+                
               />
+              </a>
               <p>
                 ${project.desc}
               </p>

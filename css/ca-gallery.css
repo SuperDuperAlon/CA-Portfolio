@@ -229,7 +229,7 @@ body {
 header.masthead {
     text-align: center;
     color: white;
-    background-image: url("../img/team/header-background.jpeg");
+    background-image: url("../img/header-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -361,6 +361,7 @@ header.masthead .intro-text .intro-heading {
 #portfolio * {
     z-index: 2;
 }
+
 
 @media (min-width: 767px) {
     #portfolio .portfolio-item {
