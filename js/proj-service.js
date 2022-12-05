@@ -5,7 +5,7 @@ var gProj = [
     title: "Minesweeper",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -14,7 +14,7 @@ var gProj = [
     title: "Touch the Num",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -23,7 +23,7 @@ var gProj = [
     title: "Better push those boxes",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -32,7 +32,7 @@ var gProj = [
     title: "Better push those boxes",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -41,7 +41,7 @@ var gProj = [
     title: "Better push those boxes",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -50,7 +50,7 @@ var gProj = [
     title: "Better push those boxes",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -59,7 +59,7 @@ var gProj = [
     title: "Minesweeper",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -68,7 +68,7 @@ var gProj = [
     title: "Minesweeper",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
   {
@@ -77,7 +77,7 @@ var gProj = [
     title: "Minesweeper",
     desc: "lorem ipsum lorem ipsum lorem ipsum",
     url: "projs/sokoban",
-    publishedAt: 1448693940000,
+    publishedAt: getTimestamp(),
     labels: ["Matrixes", "keyboard events"],
   },
 ];
@@ -90,4 +90,17 @@ function getProjects() {
 function getProjectById(id) {
   var selectedProject = gProj.find((project) => id === project.id);
   return selectedProject;
+}
+
+function getTimestamp() {
+  var timestamp = new Date().getTime();
+  return timestamp;
+}
+
+function convertTimestampToDate(timestamp) {
+  var date = new Date(timestamp);
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  var publishedAt = month + "/" + year;
+  return publishedAt;
 }

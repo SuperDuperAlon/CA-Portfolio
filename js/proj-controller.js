@@ -69,7 +69,7 @@ function renderModal(id) {
                 ${project.desc}
               </p>
               <ul class="list-inline">
-                <li>Date: January 2017</li>
+                <li>Date: ${convertTimestampToDate(project.publishedAt)}</li>
                 <li>Client: Threads</li>
                 <li>Category: Illustration</li>
               </ul>
