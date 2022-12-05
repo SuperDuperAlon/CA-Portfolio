@@ -17,25 +17,26 @@ function renderProjects() {
             <i class="fa fa-plus fa-3x"></i>
           </div>
         </div>
-        <img class="img-fluid portfolio-img" src="img/portfolio/01-thumbnail.jpg" alt="">
+        <img class="img-portfolio portfolio-img" src="img/portfolio/${project.id}.jpg" alt="">
       </a>
       <div class="portfolio-caption">
-      <h4>${project.title}</h4>
+      <h4>${project.name}</h4>
         <p class="text-muted">${project.desc}</p>
       </div>
       </div>`
     )
     .join("");
 
-  console.log(projects.id);
   elPortfolioCaption.innerHTML = captionHTML;
 }
 
 function renderModal(id) {
   var project = getProjectById(id);
-  console.log(project);
+
 
   var elModalSection = document.querySelector(".modal-section");
+
+
   var modalHTML = `<div
   class="portfolio-modal modal fade"
   id="portfolioModal${project.id}"
@@ -55,21 +56,17 @@ function renderModal(id) {
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2>${project.title}</h2>
+              <h2>${project.name}</h2>
               <p class="item-intro text-muted">
-                Lorem ipsum dolor sit amet consectetur.
+                ${project.title}
               </p>
               <img
                 class="img-fluid d-block mx-auto"
-                src="img/portfolio/01-full.jpg"
+                src="img/portfolio/${project.id}.jpg"
                 alt=""
               />
               <p>
-                Use this area to describe your project. Lorem ipsum dolor
-                sit amet, consectetur adipisicing elit. Est blanditiis
-                dolorem culpa incidunt minus dignissimos deserunt repellat
-                aperiam quasi sunt officia expedita beatae cupiditate,
-                maiores repudiandae, nostrum, reiciendis facere nemo!
+                ${project.desc}
               </p>
               <ul class="list-inline">
                 <li>Date: January 2017</li>
