@@ -1,4 +1,4 @@
-console.log("Starting up");
+"strict use";
 
 function onInit() {
   renderProjects();
@@ -73,8 +73,9 @@ function renderModal(id) {
               </p>
               <ul class="list-inline">
                 <li>Date: ${convertTimestampToDate(project.publishedAt)}</li>
-                <li>Client: Threads</li>
-                <li>Category: Illustration</li>
+                <li>Stack: ${project.labels.map((stack) => {
+                  return ' ' + stack
+                })}</li>
               </ul>
               <button
                 class="btn btn-primary"
